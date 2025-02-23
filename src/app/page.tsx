@@ -1,11 +1,5 @@
-import { Header } from "@/components";
-
 const Home = async () => {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Home;

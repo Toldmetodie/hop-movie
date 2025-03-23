@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/layouts/header";
+import { Footer } from "@/components";
+import { Carousel } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: {
@@ -35,6 +37,8 @@ export default function RootLayout({
           <Header />
           {children}
         </ThemeProvider>
+        <Carousel />
+        {/* <Footer /> */}
       </body>
     </html>
   );

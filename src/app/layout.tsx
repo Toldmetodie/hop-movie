@@ -38,7 +38,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <Carousel />
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

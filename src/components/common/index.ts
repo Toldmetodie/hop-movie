@@ -1,1 +1,2 @@
-export * from "./MovieZLogo"
+export * from "./MovieZLogo";
+export * from "./Vote";

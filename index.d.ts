@@ -17,6 +17,7 @@ type MovieDetail = {
   vote_average: number;
   backdrop_path: string;
   original_title: string;
+  title: string;
 } & MovieGenresResponse;
 
 type MoviesListResponse = {
@@ -24,4 +25,19 @@ type MoviesListResponse = {
   total_pages: number;
   total_results: number;
   results: MovieDetail[];
+};
+
+type MovieCategoryPage = {
+  title: string;
+  category: string;
+  seeMorePath: string;
+};
+
+type PageRouteParams = {
+  params: {
+    categories: string[];
+  };
+  searchParams: {
+    page: string;
+  };
 };

@@ -2,6 +2,7 @@ import { MovieZLogo } from "@/components/common";
 import { ThemeToggleButton } from "./ThemeToggleButton";
 import { GenreDropdown } from "@/components/genre/GenreDropdown";
 import { SearchBar } from "@/components/search";
+import { Suspense } from "react";
 
 export const Header = () => {
   return (
@@ -11,7 +12,9 @@ export const Header = () => {
 
         <div className=" lg: flex items-center gap-x-3">
           <GenreDropdown />
-          <SearchBar isMobile={false} />
+          <Suspense>
+            <SearchBar isMobile={false} />
+          </Suspense>
         </div>
 
         <div>

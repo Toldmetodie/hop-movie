@@ -33,12 +33,12 @@ type MovieCategoryPage = {
 };
 
 type PageRouteParams = {
-  params: {
-    segments: string[];
-  };
-  searchParams: {
-    page: string;
-  };
+  params: Promise<{ categories: string[] }>;
+  searchParams: Promise<{ page: string }>;
+};
+
+type MovieRouteParams = {
+  params: Promise<{ movieId: string }>;
 };
 
 type VideoDetails = {

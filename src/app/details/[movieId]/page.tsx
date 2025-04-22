@@ -2,12 +2,6 @@ import { Suspense } from "react";
 import { Details } from "@/components/details";
 import { getMovieDetailsById } from "@/services";
 
-type MovieRouteParams = {
-  params: {
-    movieId: string;
-  };
-};
-
 const MovieDetails = async ({ params }: MovieRouteParams) => {
   const { movieId } = await params;
 

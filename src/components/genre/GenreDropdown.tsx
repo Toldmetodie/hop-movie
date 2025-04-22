@@ -4,7 +4,7 @@ import { DropdownMenu, DropdownMenuContent } from "@/components/ui";
 import { GenreDropdownTriggerButton } from "./GenreDropdownTriggerButton";
 import { Separator } from "@radix-ui/react-separator";
 import { GenreHeader } from "./GenreHeader";
-import { AllMovieGenres } from "./AllMovieGenres";
+import { AllMoviesGenres } from "./AllMoviesGenres";
 
 export const GenreDropdown = () => {
   return (
@@ -16,7 +16,7 @@ export const GenreDropdown = () => {
       >
         <GenreHeader title="Genre" />
         <Separator className="border" />
-        <AllMovieGenres />
+        <AllMoviesGenres />
       </DropdownMenuContent>
     </DropdownMenu>
   );

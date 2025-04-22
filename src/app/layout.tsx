@@ -4,7 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/layouts/header";
 import { Footer } from "@/components";
-import { Carousel } from "@/components/ui";
+// import Carousel from "@/components/carousel";
+import MovieDetails from "./details/[movieId]/page";
 
 export const metadata: Metadata = {
   title: {
@@ -35,9 +36,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
+          {/* <Carousel /> */}
           {children}
         </ThemeProvider>
-        <Carousel />
         <Footer />
       </body>
     </html>

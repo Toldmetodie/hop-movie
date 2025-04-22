@@ -1,12 +1,13 @@
-import { MoviesListByCategory } from "@/components/home";
-import { movieCategories } from "@/constant";
-const Home = async () => {
+import { Carousel, Home } from "@/components";
+import { Suspense } from "react";
+
+const HomePage = async () => {
   return (
-    <div className="mt-20 flex flex-col items-center">
-      {movieCategories.map((category, index) => (
-        <MoviesListByCategory key={index} movieCategory={category} />
-      ))}
-    </div>
+    <Suspense fallback={<div>Loading ...</div>}>
+      <Carousel />
+      <Home />
+    </Suspense>
   );
 };
-export default Home;
+
+export default HomePage;

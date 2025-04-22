@@ -1,12 +1,19 @@
 import { fetchDataFromTMDB } from "@/utils";
+import { AxiosError } from "axios";
 
-export const getMovieByID = async (movieId: string) => {
+export const getMovieDetailsById = async (movieId: string) => {
   try {
-    const data = await fetchDataFromTMDB<MovieDetail>(
+    const movieDetails = await fetchDataFromTMDB<MovieDetail>(
       `/movie/${movieId}?language=en-US`
     );
-    return data;
+
+    return movieDetails;
   } catch (error) {
-    console.log(error);
+    const { message, response } = error as AxiosError;
+
+    console.error(`Failed to fetch movie details: ${message}`, {
+      data: response?.data,
+      status: response?.status,
+    });
   }
 };

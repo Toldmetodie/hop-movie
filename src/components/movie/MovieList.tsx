@@ -1,13 +1,23 @@
+import { ClassValue } from "clsx";
 import { MovieCard } from "./MovieCard";
-type MoviesListProps = {
+import { cn } from "@/lib";
+type MovieListProps = {
   movies: MovieDetail[];
+  imageWidth: ClassValue;
+  imageHeight: ClassValue;
+  className?: ClassValue;
 };
-export const MoviesList = (props: MoviesListProps) => {
-  const { movies } = props;
+export const MovieList = (props: MovieListProps) => {
+  const { movies, imageHeight, imageWidth, className } = props;
   return (
-    <div className="flex flex-wrap gap-6 mt-[100px]">
+    <div className={cn("flex flex-wrap gap-6", className)}>
       {movies.map((movie, index) => (
-        <MovieCard key={index} movie={movie} />
+        <MovieCard
+          key={index}
+          movie={movie}
+          imageHeight={imageHeight}
+          imageWidth={imageWidth}
+        />
       ))}
     </div>
   );

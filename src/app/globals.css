@@ -118,4 +118,8 @@
   .page-primary {
     @apply mx-auto max-w-screen-xl px-5 lg:px-0;
   }
+
+  .page-detail {
+    @apply mt-[60px] mx-auto max-w-screen-sxl min-h-screen;
+  }
 }

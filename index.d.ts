@@ -17,14 +17,13 @@ type MovieDetail = {
   vote_average: number;
   backdrop_path: string;
   original_title: string;
-  title: string;
 } & MovieGenresResponse;
 
 type MoviesListResponse = {
   page: number;
   total_pages: number;
   total_results: number;
-  results: MovieDetail[];
+  results: MovieInfo[];
 };
 
 type MovieCategoryPage = {
@@ -35,9 +34,45 @@ type MovieCategoryPage = {
 
 type PageRouteParams = {
   params: {
-    categories: string[];
+    segments: string[];
   };
   searchParams: {
     page: string;
   };
+};
+
+type VideoDetails = {
+  key: string;
+  site: string;
+  type: string;
+};
+
+type MovieVideoResponse = {
+  results: VideoDetails[];
+};
+
+type MovieCrewMember = {
+  job: string;
+  name: string;
+};
+
+type MovieCastMember = {
+  name: string;
+  known_for_department: string;
+};
+
+type MovieCreditsResponse = {
+  cast: MovieCastMember[];
+  crew: MovieCrewMember[];
+};
+
+type MovieCredits = {
+  job?: string;
+  name: string;
+  known_for_department?: string;
+}[];
+
+type ParallelRoutesLayoutProps = {
+  genres: React.ReactNode;
+  movies: React.ReactNode;
 };

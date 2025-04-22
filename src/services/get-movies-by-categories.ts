@@ -1,5 +1,6 @@
 import { CATEGORY_NAME } from "@/constant";
 import { fetchDataFromTMDB } from "@/utils";
+import { AxiosError } from "axios";
 
 type CategoryMovieRequest = {
   page: string;
@@ -24,6 +25,11 @@ export const getMoviesByCategory = async ({
       );
     return { movies, totalPages, categoryTitle };
   } catch (error) {
-    console.log(error);
+    const { message, response } = error as AxiosError;
+
+    console.error(`Failed to fetch movie videos: ${message}`, {
+      data: response?.data,
+      status: response?.status,
+    });
   }
 };

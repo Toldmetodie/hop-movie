@@ -10,7 +10,6 @@ export const ThemeToggleButton = () => {
   return (
     <div>
       <Button variant="outline" size="icon" onClick={toggleTheme}>
-        {" "}
         {isDarkThemeActive ? <Sun /> : <Moon />}
       </Button>
     </div>

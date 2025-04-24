@@ -1,9 +1,9 @@
-import { Carousel, Home } from "@/components";
+import { Carousel, Home, HomePageSkeleton } from "@/components";
 import { Suspense } from "react";
 
 const HomePage = async () => {
   return (
-    <Suspense fallback={<div>Loading ...</div>}>
+    <Suspense fallback={<HomePageSkeleton />}>
       <Carousel />
       <Home />
     </Suspense>

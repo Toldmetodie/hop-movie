@@ -1,6 +1,12 @@
 import { Suspense } from "react";
-import { Details } from "@/components/details";
+import { DetailPageSkeleton, Details } from "@/components";
 import { getMovieDetailsById } from "@/services";
+
+type MovieRouteParams = {
+  params: {
+    movieId: string;
+  };
+};
 
 const MovieDetails = async ({ params }: MovieRouteParams) => {
   const { movieId } = await params;
@@ -10,7 +16,7 @@ const MovieDetails = async ({ params }: MovieRouteParams) => {
   if (!movieDetails) return <div>Movie not found</div>;
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<DetailPageSkeleton />}>
       <Details movieDetails={movieDetails} />
     </Suspense>
   );

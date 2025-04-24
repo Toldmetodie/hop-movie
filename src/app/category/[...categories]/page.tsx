@@ -1,4 +1,4 @@
-import { Category } from "@/components";
+import { Category, CategoryPageSkeleton } from "@/components";
 import { Suspense } from "react";
 
 const MovieCategoriesPage = async ({
@@ -7,10 +7,12 @@ const MovieCategoriesPage = async ({
 }: PageRouteParams) => {
   const { categories } = await params;
   const { page = "1" } = await searchParams;
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<CategoryPageSkeleton />}>
       <Category page={page} categories={categories} />
     </Suspense>
   );
 };
+
 export default MovieCategoriesPage;
